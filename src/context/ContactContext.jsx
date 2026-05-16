@@ -21,7 +21,8 @@ export const ContactProvider = ({ children }) => {
         try{
             setLoading(true);
             const response = await contactService.getAllContacts();
-            
+            setContacts(response.data);
+            setError(null);
         }
     }
 }
