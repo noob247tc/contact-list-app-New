@@ -10,5 +10,15 @@ const api = axios.create({
 });
 
 export const contactService = {
-    getAllContacts: ()=> api.get('/users')
+    getAllContacts: ()=> api.get('/users'),
+
+    getContactById: (id) => api.get(`/users/${id}`),
+
+    createContact: (contact) => api.post('/add', contact),
+
+    updateContact: (id, contact) => api.put(`/update/${id}`, contact),
+
+    deleteContact: (id) => api.delete(`/delete/${id}`),
 }
+
+export default api;
